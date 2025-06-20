@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_Sen"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Sensors" />
+        <item
+            android:id="@+id/nav_kn"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Khái niệm Sensor" />
+        <item
+            android:id="@+id/nav_loai"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Các loại Sensor" />
+        <item
+            android:id="@+id/nav_sukien"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Xử lý sự kiện của Sensor" />
+        <item
+            android:id="@+id/nav_mon"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Monitoring the Battery" />
+    </group>
+</menu>
