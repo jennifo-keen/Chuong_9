@@ -21,8 +21,8 @@ public class LacActivity extends AppCompatActivity implements SensorEventListene
     private Sensor accelerometer;
     private View borderView;
     private static final float SHAKE_THRESHOLD_GRAVITY = 2.7F;
-    private static final int SHAKE_SLOP_TIME_MS = 500;
-    private static final int SHAKE_COUNT_RESET_TIME_MS = 3000;
+    private static final int SHAKE_SLOP_TIME_MS = 100;
+    private static final int SHAKE_COUNT_RESET_TIME_MS = 2000;
     private long lastShakeTime;
     private int shakeCount;
     private int[] colors = {Color.RED, Color.GREEN, Color.BLUE, Color.YELLOW, Color.MAGENTA};
@@ -34,7 +34,6 @@ public class LacActivity extends AppCompatActivity implements SensorEventListene
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_lac);
 
-        // Thiết lập WindowInsets
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -90,14 +89,13 @@ public class LacActivity extends AppCompatActivity implements SensorEventListene
                 lastShakeTime = now;
                 shakeCount++;
 
-                // Phát hiện lắc (3 lần lắc liên tiếp)
-                if (shakeCount >= 3) {
+                if (shakeCount >= 2) {
                     // Thay đổi màu viền
                     borderView.setBackgroundColor(colors[colorIndex]);
                     colorIndex = (colorIndex + 1) % colors.length;
 
                     // Hiển thị thông báo
-                    Toast.makeText(this, "Điện thoại bị lắc!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Điện thoại đang được lắc", Toast.LENGTH_SHORT).show();
                     shakeCount = 0;
                 }
             }
