@@ -1,22 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.HomeFragment">
+    tools:context=".ui.home.HomeFragment"
+    android:padding="10dp">
 
-    <TextView
-        android:id="@+id/text_home"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Android Sensor Framework"
+            android:textColor="#000000"
+            android:textSize="24sp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Với Android Sensor Framework chúng ta có thể sử dụng nó để kiểm tra liệu thiết bị có hỗ trợ cảm biến mà chúng ta cần truy cập hay không, lấy dữ liệu sensor, đăng kí hay hủy đăng kí lắng nghe sự kiện cảm biến thay đổi... Vậy để truy cập sensor trong ứng dụng android và lấy dữ liệu cần thiết thì chúng ta cần phải làm những thao tác nào?"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SensorManager và Sensor: Hai lớp này cung cấp cho chúng ta các phương thức để có thể truy cập và lấy dữ liệu từ các sensor"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bạn có thể tạo một đối tượng SensorManager qua phưong thức getSystemService(SENSOR_SERVICE) Lớp Sensor có định nghĩa cho chúng ta một số hằng số truy cập vào các loại cảm biến khác nhau:"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="- Sensor.TYPE_GYROSCOPE\n- Sensor.TYPE_MAGNETIC_FIELD\n- Sensor.TYPE_ORIENTATION\n- Sensor.TYPE_ACCELEROMETER"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Có thể truy cập cảm biến qua hàm sensorManager.getDefaultSensor()"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sensor listener: Khi muốn yêu cầu một loại cảm biến nào bạn cần đăng kí một Sensor listener để nó có thể thông báo cho bạn khi dữ liệu của sensor thay đổi. Một số lưu ý với Sensor listener đó là:"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="- Bạn nên đăng kí Sensor listener trong hàm onResume() và hủy đăng kí trong hàm onPause() để tránh việc sử dụng không cần thiết và tiêt kiệm pin cho thiết bị\n- onSensorChanged() được gọi khi dữ liệu cảm biến thay đổi và nó có thể được gọi rất nhiều lần chính vì điều này chúng ta nên hạn chế sử lý logic nhiều trong hàm này."
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bây giờ chung ta sẽ implement thử một project nhỏ hiện thị một compass dựa vào cảm biến Chúng ta cần tạo một custom view để hiển thị compass và một Activity quản lý việc đăng kí và hủy đăng kí Sensor listener Tạo view compass:"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_nghienDT"
+            android:text="Cảm biến nghiêng điện thoại"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_lacDT"
+            android:text="Cảm biến lắc điện thoại"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_nhietDo"
+            android:text="Cảm biến nhiệt độ điện thoại"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"/>
+
+    </LinearLayout>
+
+</ScrollView>

@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.chuong_9.databinding.FragmentSkBinding;
+import android.content.Intent;
 
 public class SkFragment extends Fragment {
 
@@ -22,6 +23,18 @@ public class SkFragment extends Fragment {
 
         binding = FragmentSkBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+
+        binding.btnNghienDT.setOnClickListener(v -> {
+            startActivity(new Intent(getActivity(), NghiengActivity.class));
+        });
+
+        binding.btnLacDT.setOnClickListener(v -> {
+            startActivity(new Intent(getActivity(), LacActivity.class));
+        });
+
+        binding.btnNhietDo.setOnClickListener(v -> {
+            startActivity(new Intent(getActivity(), NhietDoActivity.class));
+        });
 
         return root;
     }
