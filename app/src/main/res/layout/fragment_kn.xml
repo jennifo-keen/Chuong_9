@@ -4,7 +4,50 @@
     android:layout_height="match_parent"
     android:padding="16dp">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/text_sensor_intro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hầu hết các thiết bị Android đều có cảm biến tích hợp để đo chuyển động, định hướng và các điều kiện môi trường khác nhau..."
+            android:textSize="16sp"
+            android:lineSpacingExtra="4dp" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="16dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/kn" />
+
+        <TextView
+            android:id="@+id/text_sensor_explanation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Trong Android Studio, sensors (cảm biến) là các thành phần phần cứng hoặc phần mềm được tích hợp trong thiết bị Android để thu thập dữ liệu..."
+            android:textSize="16sp"
+            android:lineSpacingExtra="4dp" />
+
+        <TextView
+            android:id="@+id/text_sensor_example"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Ví dụ: một ứng dụng game có thể dùng cảm biến gia tốc để phát hiện khi người chơi nghiêng điện thoại..."
+            android:textStyle="italic"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/text_sensor_summary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Tóm lại, sensor trong Android là công cụ giúp ứng dụng tương tác thông minh hơn với thế giới thực thông qua dữ liệu thu thập được từ thiết bị."
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </LinearLayout>
 </ScrollView>
