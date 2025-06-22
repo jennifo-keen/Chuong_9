@@ -1,22 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.HomeFragment">
+    android:padding="16dp">
 
     <TextView
-        android:id="@+id/text_home"
+        android:id="@+id/tvTheory"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:textSize="16sp"
+        android:padding="8dp"
+        android:text="9.1.2 Các loại Sensor\nSensor được chia thành ba nhóm chính: Cảm biến chuyển động, Cảm biến môi trường và Cảm biến vị trí.\n\n9.1.2.1 Cảm biến chuyển động (Motion Sensors)\n• Gia tốc kế (Accelerometer): Đo gia tốc trên ba trục (X, Y, Z). Ứng dụng: Phát hiện nghiêng, lắc thiết bị, đếm bước chân.\n• Con quay hồi chuyển (Gyroscope): Đo tốc độ góc trên ba trục. Ứng dụng: Game điều khiển bằng nghiêng, AR/VR.\n• Gia tốc tuyến tính (Linear Accelerometer): Tương tự gia tốc kế nhưng loại bỏ ảnh hưởng của trọng lực.\n• Cảm biến trọng lực (Gravity Sensor): Đo lực hấp dẫn. Ứng dụng: Xác định hướng thiết bị.\n• Cảm biến vector xoay (Rotation Vector Sensor): Kết hợp các cảm biến để xác định hướng quay. Ứng dụng: Bản đồ 3D, AR.\n\n9.1.2.2 Cảm biến môi trường (Environmental Sensors)\n• Cảm biến ánh sáng (Ambient Light Sensor): Đo cường độ ánh sáng. Ứng dụng: Tự động điều chỉnh độ sáng màn hình.\n• Cảm biến nhiệt độ (Temperature Sensor): Đo nhiệt độ môi trường hoặc thiết bị. Ứng dụng: Dự báo thời tiết, giám sát phần cứng.\n• Cảm biến áp suất (Pressure Sensor): Đo áp suất không khí. Ứng dụng: Đo độ cao, dự báo thời tiết.\n• Cảm biến độ ẩm (Humidity Sensor): Đo độ ẩm môi trường. Ứng dụng: Ứng dụng thời tiết.\n\n9.1.2.3 Cảm biến vị trí (Position Sensors)\n• Từ kế (Magnetometer): Đo từ trường Trái Đất để xác định hướng (la bàn). Ứng dụng: Bản đồ, la bàn.\n• Cảm biến tiệm cận (Proximity Sensor): Phát hiện vật thể gần thiết bị. Ứng dụng: Tắt màn hình khi áp tai nghe điện thoại.\n• GPS Sensor: Cung cấp vị trí địa lý (kinh độ, vĩ độ). Ứng dụng: Bản đồ, định vị.\n\n9.1.2.4 Các sensor khác\n• Cảm biến vân tay (Fingerprint Sensor): Đọc dấu vân tay. Ứng dụng: Xác thực, bảo mật.\n• Cảm biến nhịp tim (Heart Rate Sensor): Đo nhịp tim. Ứng dụng: Ứng dụng sức khỏe.\n• Microphone: Thu âm thanh. Ứng dụng: Ghi âm, trợ lý ảo.\n• Camera: Chụp ảnh, quay video. Ứng dụng: AR, nhận diện khuôn mặt.\n• NFC Sensor: Giao tiếp trường gần. Ứng dụng: Thanh toán, truyền dữ liệu.\n\n9.1.3 Cách lập trình với sensor\n• Android: Sử dụng SensorManager để truy cập sensor, đăng ký SensorEventListener để nhận dữ liệu. Cần cấp quyền như ACCESS_FINE_LOCATION cho GPS.\n• iOS: Sử dụng framework Core Motion cho cảm biến chuyển động, Core Location cho GPS. Ví dụ: CMMotionManager để lấy dữ liệu từ gia tốc kế hoặc con quay.\n\n9.1.4 Lưu ý khi lập trình với sensor\n• Tiết kiệm năng lượng: Sensor tiêu thụ pin, nên chỉ bật khi cần và hủy listener khi không dùng.\n• Độ chính xác: Dữ liệu từ sensor có thể bị nhiễu, cần lọc (Kalman filter, trung bình động).\n• Tương thích: Kiểm tra xem thiết bị có hỗ trợ sensor hay không trước khi dùng.\n• Quyền người dùng: Xin phép trước khi truy cập sensor nhạy cảm (GPS, camera, microphone).\n\n9.1.5 Ứng dụng thực tế\n• Game: Điều khiển bằng nghiêng (gyroscope, accelerometer).\n• Sức khỏe: Đếm bước chân, đo nhịp tim.\n• AR/VR: Kết hợp nhiều sensor để tạo trải nghiệm thực tế ảo.\n• Định vị: Bản đồ, tìm đường.\n• Tự động hóa: Tắt màn hình khi áp tai, điều chỉnh độ sáng." />
+
+</ScrollView>
