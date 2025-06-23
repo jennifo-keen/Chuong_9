@@ -1,21 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.gallery.GalleryFragment">
+    android:layout_height="match_parent">
 
+    <!-- ScrollView để hiển thị nội dung văn bản -->
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:padding="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/txtBatteryStatus"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- LinearLayout chứa các TextView bên trong ScrollView -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Giám sát mức pin và trạng thái sạc:"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:paddingBottom="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Khi thay đổi tần suất cập nhật ở chế độ nền để giảm tác động của các bản cập nhật đó đến thời lượng pin, bạn nên bắt đầu kiểm tra mức pin và trạng thái sạc hiện tại.\n\nTác động đến thời lượng pin của việc thực hiện cập nhật ứng dụng phụ thuộc vào mức pin và trạng thái sạc của thiết bị. Tác động của việc thực hiện cập nhật trong khi thiết bị đang sạc qua AC là không đáng kể. Vì vậy, trong hầu hết các trường hợp, bạn có thể tăng tối đa tốc độ làm mới bất cứ khi nào thiết bị được kết nối với bộ sạc tường. Ngược lại, nếu thiết bị đang xả pin, thì việc giảm tốc độ cập nhật sẽ giúp kéo dài thời lượng pin.\n\nTương tự, bạn có thể kiểm tra mức pin, có thể làm giảm tần suất (hoặc thậm chí dừng) các bản cập nhật khi sắp hết pin.\n\nBắt đầu bằng cách xác định trạng thái tính phí hiện tại."
+                android:textSize="16sp"
+                android:lineSpacingExtra="4dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Xác định trạng thái sạc hiện tại:"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:paddingBottom="8dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="BatteryManager sẽ thông báo về tất cả thông tin về pin và thông tin sạc trong một Intent cố định có chứa trạng thái sạc."
+                android:textSize="16sp"
+                android:lineSpacingExtra="4dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Xác định mức pin hiện tại:"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:paddingBottom="8dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Trong một số trường hợp, việc xác định mức pin hiện tại cũng rất hữu ích. Bạn có thể chọn giảm tốc độ cập nhật ở chế độ nền nếu mức pin thấp hơn một mức nhất định. Bạn có thể biết mức pin hiện tại bằng cách trích xuất mức pin hiện tại và tỷ lệ từ ý định về trạng thái pin"
+                android:textSize="16sp"
+                android:lineSpacingExtra="4dp" />
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- TextView hiển thị thông tin trạng thái pin -->
     <TextView
         android:id="@+id/txtBatteryStatus"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:text="Battery Info"
         android:textColor="#000000"
         android:textSize="18sp"
+        android:padding="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
